@@ -1,0 +1,7 @@
+FROM microsoft/dotnet:1.0.0-core
+
+WORKDIR /app
+ADD binaries.tar /app/
+
+EXPOSE 9000
+ENTRYPOINT dotnet DotnetApiReference.Api.dll

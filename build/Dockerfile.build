@@ -1,0 +1,8 @@
+FROM acraven/dotnet:build-api-1.0.0
+
+WORKDIR /build
+COPY . /build
+
+RUN ./dotnet-build.sh
+
+VOLUME /build/package
