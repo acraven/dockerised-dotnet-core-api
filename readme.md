@@ -7,6 +7,8 @@ This repository contains a reference Web API constructed using .NET Core.
 
 `docker-run.sh` - run the packaged container.
 
+`local-test.bat` - build and run tests in Windows.
+
 Linux
 -----
 When using Linux, use `find . -name '*.sh' | xargs git update-index --chmod=+x` to make the .sh files executable. Boot2Docker doesn't have this problem, but instead sets all files to be executable.

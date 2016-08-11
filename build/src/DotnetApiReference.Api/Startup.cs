@@ -1,7 +1,8 @@
 namespace DotnetApiReference.Api
 {
    using System;
-   using DotnetApiReference.Api.Handlers;
+   using System.Net.Http;
+   using Bivouac.Middleware;
    using Microsoft.AspNetCore.Builder;
    using Microsoft.Extensions.DependencyInjection;
 
@@ -9,14 +10,20 @@ namespace DotnetApiReference.Api
    {
       public static void ConfigureServices(IServiceCollection services)
       {
+         if (services == null) throw new ArgumentNullException(nameof(services));
+
+         services.AddServerLoggingServices();
+         services.AddStatusEndpointServices("dotnet-api-reference");
+
+         services.AddSingleton<HttpMessageHandler, LoggingHttpClientHandler>();
       }
 
-      public static void ConfigureApp(IApplicationBuilder app)
+      public static void Configure(IApplicationBuilder app)
       {
          if (app == null) throw new ArgumentNullException(nameof(app));
 
-         app.HandleGet<PingHandler>("/ping");
-         app.HandleGet<VersionHandler>("/version");
+         app.UseServerLoggingMiddleware();
+         app.UseStatusEndpointMiddleware();
       }
    }
 }

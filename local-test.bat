@@ -1,0 +1,1 @@
+dotnet test build\src\DotnetApiReference.Api.Tests\project.json

@@ -10,7 +10,7 @@ namespace DotnetApiReference.Api
              .UseKestrel()
              .UseUrls("http://*:9000/")
              .ConfigureServices(Startup.ConfigureServices)
-             .Configure(Startup.ConfigureApp)
+             .Configure(Startup.Configure)
              .Build();
 
          host.Run();
