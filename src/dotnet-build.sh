@@ -13,8 +13,8 @@ check_errors()
 dotnet restore
 check_errors $? "dotnet restore"
 
-dotnet publish src/DotnetApiReference.Api --configuration Release --output package
+dotnet publish DotnetApiReference.Api --configuration Release --output package
 check_errors $? "dotnet publish"
 
-dotnet test src/DotnetApiReference.Api.Tests --configuration Release
+dotnet test DotnetApiReference.Api.Tests --configuration Release
 check_errors $? "dotnet test"

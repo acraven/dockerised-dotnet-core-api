@@ -1,1 +1,2 @@
-dotnet test build\src\DotnetApiReference.Api.Tests\project.json
+dotnet restore
+dotnet test src\DotnetApiReference.Api.Tests\project.json

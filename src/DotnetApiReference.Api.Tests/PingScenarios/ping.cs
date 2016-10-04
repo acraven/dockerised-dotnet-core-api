@@ -1,21 +1,19 @@
-namespace DotnetApiReference.Api.Tests.StatusScenarios
+namespace DotnetApiReference.Api.Tests.PingScenarios
 {
    using System;
    using System.Net;
    using System.Net.Http;
-   using Newtonsoft.Json;
    using Banshee;
    using Bivouac.Abstractions;
-   using Bivouac.Model;
    using Bivouac.Services;
    using Microsoft.Extensions.DependencyInjection;
    using Xunit;
 
-   public class status
+   public class ping
    {
       private readonly HttpResponseMessage _response;
 
-      public status()
+      public ping()
       {
          Action<IServiceCollection> configureServices = services =>
          {
@@ -24,7 +22,7 @@ namespace DotnetApiReference.Api.Tests.StatusScenarios
          };
          var testHost = new WebApiTestHost(configureServices, Startup.Configure);
 
-         _response = testHost.Get("/status");
+         _response = testHost.Get("/ping");
       }
 
       [Fact]
@@ -34,13 +32,11 @@ namespace DotnetApiReference.Api.Tests.StatusScenarios
       }
 
       [Fact]
-      public void should_return_status_content()
+      public void should_return_content_pong()
       {
          var content = _response.Content.ReadAsStringAsync().Result;
-         var status = JsonConvert.DeserializeObject<Status>(content);
 
-         Assert.Equal("dotnet-api-reference", status.Name);
-         Assert.Equal(Availability.Available, status.Availability);
+         Assert.Equal(content, "Pong!");
       }
    }
 }

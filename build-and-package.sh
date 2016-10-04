@@ -8,10 +8,9 @@ check_errors()
   fi
 }
 
-docker build --tag=dotnet-api-reference/build:latest --file build/Dockerfile.build --no-cache=true build
-check_errors $? "docker build"
+docker build --tag=dotnet-api-reference/build:latest --file src/Dockerfile.build --no-cache=true src
+check_errors $? "docker build src"
 
-mkdir -p package
 rm -f package/binaries.tar
 
 #Extract the contents of the package folder of the build image. Docker Run can't be
@@ -23,3 +22,4 @@ docker rm -v $id
 #TODO: Check package.tar exists and return error code if not
 
 docker build --tag=dotnet-api-reference/api:latest --file package/Dockerfile.package --no-cache=true package
+check_errors $? "docker build package"

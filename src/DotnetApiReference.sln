@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotnetApiReference.Api", "src\DotnetApiReference.Api\DotnetApiReference.Api.xproj", "{D489D11A-BCCD-4FC8-A756-E1B14228D159}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotnetApiReference.Api", "DotnetApiReference.Api\DotnetApiReference.Api.xproj", "{D489D11A-BCCD-4FC8-A756-E1B14228D159}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotnetApiReference.Api.Tests", "src\DotnetApiReference.Api.Tests\DotnetApiReference.Api.Tests.xproj", "{DB5DA550-CDDB-42A8-8B27-C27EBE1FF606}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotnetApiReference.Api.Tests", "DotnetApiReference.Api.Tests\DotnetApiReference.Api.Tests.xproj", "{DB5DA550-CDDB-42A8-8B27-C27EBE1FF606}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

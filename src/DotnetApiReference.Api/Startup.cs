@@ -12,10 +12,12 @@ namespace DotnetApiReference.Api
       {
          if (services == null) throw new ArgumentNullException(nameof(services));
 
-         services.AddServerLoggingServices();
          services.AddStatusEndpointServices("dotnet-api-reference");
+         services.AddServerLoggingServices();
 
          services.AddSingleton<HttpMessageHandler, LoggingHttpClientHandler>();
+
+         services.AddMvc();
       }
 
       public static void Configure(IApplicationBuilder app)
@@ -24,6 +26,8 @@ namespace DotnetApiReference.Api
 
          app.UseServerLoggingMiddleware();
          app.UseStatusEndpointMiddleware();
+
+         app.UseMvc();
       }
    }
 }
