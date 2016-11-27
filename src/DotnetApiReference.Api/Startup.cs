@@ -1,8 +1,10 @@
 namespace DotnetApiReference.Api
 {
    using System;
-   using System.Net.Http;
+   using Bivouac.Abstractions;
+   using Bivouac.Events;
    using Bivouac.Middleware;
+   using Burble.Abstractions;
    using Microsoft.AspNetCore.Builder;
    using Microsoft.Extensions.DependencyInjection;
 
@@ -15,7 +17,8 @@ namespace DotnetApiReference.Api
          services.AddStatusEndpointServices("dotnet-api-reference");
          services.AddServerLoggingServices();
 
-         services.AddSingleton<HttpMessageHandler, LoggingHttpClientHandler>();
+         services.AddTransient<IHttpServerEventCallback>(CreateHttpServerEventCallback);
+         services.AddTransient<IHttpClientEventCallback>(CreateHttpClientEventCallback);
 
          services.AddMvc();
       }
@@ -28,6 +31,22 @@ namespace DotnetApiReference.Api
          app.UseStatusEndpointMiddleware();
 
          app.UseMvc();
+      }
+
+      private static IHttpServerEventCallback CreateHttpServerEventCallback(IServiceProvider serviceProvider)
+      {
+         var requestIdGetter = serviceProvider.GetService<IGetRequestId>();
+         var correlationIdGetter = serviceProvider.GetService<IGetCorrelationId>();
+
+         return new IdentifyingHttpServerEventCallback(
+            requestIdGetter,
+            correlationIdGetter,
+            new JsonHttpServerEventCallback(Console.WriteLine));
+      }
+
+      private static IHttpClientEventCallback CreateHttpClientEventCallback(IServiceProvider serviceProvider)
+      {
+         return new JsonHttpClientEventCallback(Console.WriteLine);
       }
    }
 }

@@ -5,7 +5,7 @@ namespace DotnetApiReference.Api.Tests.PingScenarios
    using System.Net.Http;
    using Banshee;
    using Bivouac.Abstractions;
-   using Bivouac.Services;
+   using Bivouac.Events;
    using Microsoft.Extensions.DependencyInjection;
    using Xunit;
 
@@ -18,9 +18,9 @@ namespace DotnetApiReference.Api.Tests.PingScenarios
          Action<IServiceCollection> configureServices = services =>
          {
             Startup.ConfigureServices(services);
-            services.AddSingleton<IServerLoggingService, NoOpServerLoggingService>();
+            services.AddTransient<IHttpServerEventCallback, NoOpHttpServerEventCallback>();
          };
-         var testHost = new WebApiTestHost(configureServices, Startup.Configure);
+         var testHost = new LightweightWebApiHost(configureServices, Startup.Configure);
 
          _response = testHost.Get("/ping");
       }
