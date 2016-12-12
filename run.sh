@@ -1,6 +1,6 @@
 #!/bin/bash
 
-id=$(docker ps -aq --filter name=dotnet-api-reference-api)
+id=$(docker ps -aq --filter name=dockerised-dotnet-core-api)
 
 if [ -n "$id" ]; then
   #TODO Need to check if container is running before stopping
@@ -12,7 +12,7 @@ fi
 
 echo Starting new container
 docker run \
-  --name dotnet-api-reference-api \
-  -itd \
+  --name dockerised-dotnet-core-api \
+  -d \
   -p 9000:9000 \
-  dotnet-api-reference/api:latest
+  dockerised-dotnet-core-api/api:latest
