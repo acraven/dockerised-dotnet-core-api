@@ -6,4 +6,4 @@ ADD binaries.tar /app/
 EXPOSE 9000
 
 # Using the exec form of CMD allows SIGINT to be passed from container to app
-CMD ["dotnet", "DotnetApiReference.Api.dll"]
+CMD ["dotnet", "DotnetApiReference.dll"]

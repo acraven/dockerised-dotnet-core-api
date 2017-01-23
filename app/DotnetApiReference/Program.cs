@@ -1,4 +1,4 @@
-namespace DotnetApiReference.Api
+namespace DotnetApiReference
 {
    using Microsoft.AspNetCore.Hosting;
 

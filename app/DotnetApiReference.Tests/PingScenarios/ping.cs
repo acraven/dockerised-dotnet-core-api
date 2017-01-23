@@ -1,4 +1,4 @@
-namespace DotnetApiReference.Api.Tests.PingScenarios
+namespace DotnetApiReference.Tests.PingScenarios
 {
    using System;
    using System.Net;

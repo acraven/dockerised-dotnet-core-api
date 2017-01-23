@@ -4,4 +4,4 @@ project.lock.json
 .vs/
 bin/
 obj/
-/binaries/
+binaries/

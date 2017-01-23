@@ -11,7 +11,7 @@
       "xunit": "2.2.0-beta2-build3300",
       "dotnet-test-xunit": "2.2.0-preview2-build1029",
       "Microsoft.AspNetCore.TestHost": "1.0.0",
-      "DotnetApiReference.Api": { "target": "project" },
+      "DotnetApiReference": { "target": "project" },
       "Bivouac": "0.0.2-preview0016",
       "Banshee": "0.0.2"
    },

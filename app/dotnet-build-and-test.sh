@@ -2,5 +2,5 @@
 set -e
 
 dotnet restore
-dotnet publish DotnetApiReference.Api --configuration Release --output binaries
-dotnet test DotnetApiReference.Api.Tests --configuration Release
+dotnet publish DotnetApiReference --configuration Release --output binaries
+dotnet test DotnetApiReference.Tests --configuration Release

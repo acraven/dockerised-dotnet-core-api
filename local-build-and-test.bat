@@ -1,2 +1,2 @@
 dotnet restore
-dotnet test app\DotnetApiReference.Api.Tests\project.json
+dotnet test app\DotnetApiReference.Tests\project.json
