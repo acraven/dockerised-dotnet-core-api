@@ -3,9 +3,9 @@
 
 This repository contains a reference Web API constructed using .NET Core.
 
-`build-and-package-sh` - run a two step process that a) builds and tests the Web and publishes binaries to a volume and b) extracts the volume and builds a lightweight production container.
+`docker-build-and-package-sh` - run a two step process that a) builds and tests the Web and publishes binaries to a volume and b) extracts the volume and builds a lightweight production container.
 
-`run.sh` - run the packaged container.
+`docker-run.sh` - run the packaged container.
 
 `local-test.bat` - build and run tests in Windows.
 

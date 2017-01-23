@@ -1,16 +1,21 @@
 #!/bin/bash
+set -e
 
 id=$(docker ps -aq --filter name=dockerised-dotnet-core-api)
 
 if [ -n "$id" ]; then
-  #TODO Need to check if container is running before stopping
-  echo "Stopping container (sending SIGINT)"
-  docker kill --signal=INT $id
+  isrunning=$(docker inspect --format="{{ .State.Running }}" $id)
+
+  if [ "$isrunning" == "true" ]; then
+    echo "Stopping container (sending SIGINT)"
+    docker kill --signal=INT $id
+  fi
+
   echo "Removing container"
   docker rm $id
 fi
 
-echo Starting new container
+echo "Starting new container"
 docker run \
   --name dockerised-dotnet-core-api \
   -d \
