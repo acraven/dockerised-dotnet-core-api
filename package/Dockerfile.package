@@ -1,9 +1,0 @@
-FROM microsoft/dotnet:1.0.1-core
-
-WORKDIR /app
-ADD binaries.tar /app/
-
-EXPOSE 9000
-
-# Using the exec form of CMD allows SIGINT to be passed from container to app
-CMD ["dotnet", "DotnetApiReference.dll"]

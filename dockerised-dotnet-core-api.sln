@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{F44C88CA-587F-4D2A-976E-4E1DA0B22E83}"
+ProjectSection(SolutionItems) = preProject
+	app\Dockerfile = app\Dockerfile
+EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCoreApiReference", "app\DotnetCoreApiReference\DotnetCoreApiReference.csproj", "{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetCoreApiReference.Tests", "app\DotnetCoreApiReference.Tests\DotnetCoreApiReference.Tests.csproj", "{6458A3C7-40FD-4AC9-9609-A1B03E774195}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{15BB0D32-2A40-4746-BDF0-05AC65153868}"
+ProjectSection(SolutionItems) = preProject
+	tests\Dockerfile = tests\Dockerfile
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".", ".", "{7D11F3E9-79BF-439A-A2F4-BC8E4AC5F44E}"
+ProjectSection(SolutionItems) = preProject
+	docker-compose.yml = docker-compose.yml
+	run.sh = run.sh
+	test.sh = test.sh
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ci", "ci", "{F2A1A32D-FF7E-4C41-AF83-7E074765068E}"
+ProjectSection(SolutionItems) = preProject
+	ci\package.sh = ci\package.sh
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1} = {F44C88CA-587F-4D2A-976E-4E1DA0B22E83}
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195} = {F44C88CA-587F-4D2A-976E-4E1DA0B22E83}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|x64.Build.0 = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Debug|x86.Build.0 = Debug|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|x64.ActiveCfg = Release|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|x64.Build.0 = Release|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|x86.ActiveCfg = Release|Any CPU
+		{91D5D7D1-B06C-4837-97FE-76C2EBB57BE1}.Release|x86.Build.0 = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|x64.Build.0 = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Debug|x86.Build.0 = Debug|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|x64.ActiveCfg = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|x64.Build.0 = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|x86.ActiveCfg = Release|Any CPU
+		{6458A3C7-40FD-4AC9-9609-A1B03E774195}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

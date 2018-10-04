@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Banshee" Version="0.0.3-preview0028" />
+    <PackageReference Include="Bivouac" Version="0.0.4-preview0027" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.7.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DotnetCoreApiReference\DotnetCoreApiReference.csproj" />
+  </ItemGroup>
+</Project>

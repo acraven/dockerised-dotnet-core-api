@@ -1,0 +1,15 @@
+version: '2.3'
+
+services:
+  app:
+    build: ./app
+    ports:
+      - "8080:8080"
+    healthcheck:
+      interval: 3s
+
+  tests:
+    build: ./tests
+    depends_on:
+      app:
+        condition: service_healthy
